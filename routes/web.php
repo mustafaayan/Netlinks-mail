@@ -10,11 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+Route::get('/logout', function() {
+    auth()->logout();
+    return view('auth.login');
 
-Route::get('/', function () {
-    return view('welcome');
 });
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+
