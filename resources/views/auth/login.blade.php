@@ -1,4 +1,13 @@
 @extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Netlinks Mail</title>
+</head>
+<body>
+
+</body>
+</html>
 <style type="text/css">
     body {
         background-image: url('Images/netlinks.jpg');
@@ -82,13 +91,13 @@
                                     @endif
                                 </div>
                             </div>
-
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
+                                
+                                
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
+                                    <span style="display: block; position: absolute; top:7px; right: 25px;    background-color: white; " class="atnetlinks">@netlink.af</span>
                                     @if ($errors->has('email'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -118,6 +127,7 @@
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                 </div>
                             </div>
+                            
                              <div class="form-group">
                                 <label for="password-confirm" class="col-md-4 control-label">Date of Birth 
                                 </label>
@@ -149,6 +159,19 @@
                                         @endfor
                                     </select>
                                     </div>
+                                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                        <label for="name" class="col-md-4 control-label">Mobile Phone &nbsp +93</label>
+                                    
+                                <div class="col-md-4">
+                                    <input id="number" type="text" class="form-control" name="number" value="{{ old('number') }}" required autofocus>
+
+                                    @if ($errors->has('number'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('number') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                                      <div class="form-group">
                                 <label for="Gender" class="col-md-4 control-label">Gender</label>
                                 &nbsp &nbsp
@@ -163,7 +186,7 @@
                                         <i class="fa fa-user-plus" aria-hidden="true"></i>
                                     <button type="submit" class="btn btn-danger btn-block">
                                         <strong>
-                                        Register Now
+                                        Create Account
                                         </strong>
                                     </button>
                                 </div>
